@@ -30,7 +30,7 @@ force-https: True
 
 lang: "en"
 author: "Wesley Lin"
-title: "{ John S }"
+title: "{ Wesley Lin }"
 description: "Blog and website of Wesley Lin."
 keywords: "wesley, personal, jekyll, theme"
 favicon: "/img/favicon.ico"
@@ -55,8 +55,8 @@ type-speed: 10
 start-delay: 200
 delete-delay: 5000
 lines: # You can add HTML Tags in the Text
-  - text: "The lower you fall, the higher you'll fly."
-  - text: "Where’s your will to be weird?"
+  - text: "Overload Jenga code"
+  - text: "Awesome Possums"
 
 me-img: "/img/jetpacktocat.png"
 
