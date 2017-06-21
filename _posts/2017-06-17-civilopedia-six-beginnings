@@ -1,0 +1,54 @@
+---
+layout: post
+section-type: post
+title: Civilopedia Six Project Troubles
+category: project
+---
+
+## Ionic and the beginning
+I've always wanted to use Ionic to create something back when I first saw it used at a hackathon.
+It seemed like a great promise, easily allowing a developer to code one app for both iOS and Android at the same time. Plus
+working in the verbose Java for android didn't hold much appeal for me (though android studio has gotten much better).
+
+Problem was that Ionic was built on angular and angular had some pretty huge changes in the past couple years moving from
+angular 1 to angular 2 with the removal of the scope operator and a new component class. Learning all the new frameworks was
+quite painful, though not as painful as trying to wrap one's head around the scope operator and how to
+encapsulate one's code with controllers and directives.
+
+
+## Civilization 6
+Well I loved playing Civilization 5 and with Civilization 6 coming, I decided to try building an
+Ionic app about the Civilopedia. The forms and templates for showing data was pretty easy to build.
+ However, converting the xml data to json then to javascript objects took way too long if I kept everything
+ in the same file.
+
+So I kinda gave up half way with interviews and other stuff. But now that is June
+I decided to try again. This time I decided to just parse the data directly from json
+rather than transforming it twice from the game's base xml. Some new difficulties
+were with learning the new Observables which are similar but still different
+than the "older" Promise's system which I had started to understand.
+
+## Current status
+
+I'ved implemented parts of technologies and civics. It went pretty well storing the text data of each tech
+or civic in json. I converted it from csv to json using node csvtojson and then manaully edited it for smaller stuff.
+One decision I made early on, which I'm still not sure is right or wrong yet was to have an additional tag called 
+"id" on every item. 
+
+~~~~
+civics.json
+{
+  "craftsmanship":{
+    "name":"Craftsmanship",
+    "id":"craftsmanship",
+    "era":"ancient",
+    "eureka":"Improve 3 tiles",
+    "requires":["code_of_laws"]
+  },
+..... 
+}
+~~~~
+
+Another thing to plan was how to retrieve each item's relationship to  each other. Especially since there were many two-way relations. For example the Technology "Archery" would need a link to archers because it unlocks it. However, Archers would also need a link to the required tech Archery. I briefly considered using a mySql local database as it would easily allow looking up on both ends. Though after some googling I decided just duplicating the data on both ends of archery and the unit archer would be fine as the guide's data isn't going to change except for 4 month patches.
+
+Currently I'm gonna extend the database to include civilizations and than try to optimize the view better for desktops. Surprisingly, the new ionic grid system has been easier to use than I expected. It's allowed for the resizing of the ionic-cards that I've been using and placing them from vertical alignment to horizontally displayed across wide desktop screens.
