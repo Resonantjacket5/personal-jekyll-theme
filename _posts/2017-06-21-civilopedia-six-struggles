@@ -1,0 +1,15 @@
+---
+layout: post
+section-type: post
+title: Civilopedia Six Struggles
+category: project
+---
+
+## Civilopedia 6 now on github!
+I finally got the app on github pages. So now the world can view the app. Albeit a very glitchly app and kinda slow, but 
+still its nice to have it working online, rather than just on my phone.
+
+
+## Small hurdles
+The new lazy loading page loading system in Ionic while nice to load pages (especially for my icons which can be linked),
+is excruciating to implement nested pipes or components. I first thought that with using a pipe in a component I would import it into the COMPONENT_NAME.module.ts. However I was using shared components, and so instead tried importing it into the shared component.module.ts which still didn't work. Instead I'm just gonna place the filter code in my singleton provider and call it from there. It'll be a bit more hassle but at least it'll compile.
